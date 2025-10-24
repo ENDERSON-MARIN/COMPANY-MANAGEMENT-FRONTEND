@@ -1,12 +1,12 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-import Footer from "@/components/common/footer";
-import { Header } from "@/components/common/header";
-import { auth } from "@/lib/auth";
+import Footer from "@/_components/common/footer";
+import { Header } from "@/_components/common/header";
+import { auth } from "@/_lib/auth";
 
-import { CompanyForm } from "./companies/components/company-form";
-import { CompanyList } from "./companies/components/company-list";
+import { CompanyForm } from "./companies/_components/company-form";
+import { CompanyList } from "./companies/_components/company-list";
 
 const Home = async () => {
   const session = await auth.api.getSession({
