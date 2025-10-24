@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/_components/ui/table";
+import { DataTable } from "@/_components/ui/data-table";
 import { useGetCompanies } from "@/_hooks/queries/use-get-companies";
+
+import { companiesTableColumns } from "./table-columns";
 
 export function CompanyList() {
   const { data: companies, isLoading, isError } = useGetCompanies();
@@ -21,28 +16,5 @@ export function CompanyList() {
     return <div>Ocorreu um erro ao buscar as empresas.</div>;
   }
 
-  return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Nome</TableHead>
-          <TableHead>CNPJ</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Phone</TableHead>
-          <TableHead>Address</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {companies?.map((company) => (
-          <TableRow key={company.id}>
-            <TableCell>{company.name}</TableCell>
-            <TableCell>{company.cnpj}</TableCell>
-            <TableCell>{company.email}</TableCell>
-            <TableCell>{company?.phone}</TableCell>
-            <TableCell>{company?.address}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  );
+  return <DataTable columns={companiesTableColumns} data={companies || []} />;
 }
