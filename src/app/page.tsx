@@ -15,9 +15,9 @@ import { CreateCompanyButton } from "./companies/_components/create-company-butt
 
 const CompaniesPage = () => {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex h-screen flex-col items-center">
+      <div className="flex-1">
         <PageContainer>
           <PageHeaderContainer>
             <PageHeaderContent>
@@ -34,9 +34,9 @@ const CompaniesPage = () => {
             <CompanyList />
           </PageContent>
         </PageContainer>
-      </main>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
