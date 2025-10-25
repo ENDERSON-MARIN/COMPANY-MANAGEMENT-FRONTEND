@@ -1,0 +1,16 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
+import { CompanyService } from "@/_services/company.service";
+
+import { getCompaniesQueryKey } from "../queries/use-get-companies";
+
+export function useCreateCompany() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: CompanyService.create,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: getCompaniesQueryKey() });
+    },
+  });
+}
