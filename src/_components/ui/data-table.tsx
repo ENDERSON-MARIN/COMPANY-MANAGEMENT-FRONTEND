@@ -2,8 +2,10 @@
 
 import {
   ColumnDef,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   SortingState,
@@ -12,6 +14,7 @@ import {
 import { useState } from "react";
 
 import { Button } from "@/_components/ui/button";
+import { Input } from "@/_components/ui/input";
 import {
   Table,
   TableBody,
@@ -31,6 +34,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const table = useReactTable({
     data,
     columns,
@@ -46,13 +50,27 @@ export function DataTable<TData, TValue>({
     //sorting
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    //filtering
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
   });
 
   return (
     <>
+      <div className="flex items-center justify-center py-4">
+        <Input
+          placeholder="Procure a empresa por nome..."
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            table.getColumn("name")?.setFilterValue(event.target.value)
+          }
+          className="max-w-lg"
+        />
+      </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
