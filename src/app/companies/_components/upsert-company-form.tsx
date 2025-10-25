@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -51,6 +52,26 @@ const UpsertCompanyForm = ({ company, onSuccess }: UpsertCompanyFormProps) => {
       address: company?.address ?? "",
     },
   });
+
+  useEffect(() => {
+    if (company) {
+      form.reset({
+        name: company.name,
+        cnpj: company.cnpj,
+        email: company.email,
+        phone: company.phone ?? "",
+        address: company.address ?? "",
+      });
+    } else {
+      form.reset({
+        name: "",
+        cnpj: "",
+        email: "",
+        phone: "",
+        address: "",
+      });
+    }
+  }, [company, form]);
 
   const onSubmit = (values: CompanyFormValues) => {
     if (isEditing) {
