@@ -2,6 +2,21 @@
 
 Sistema de gerenciamento de empresas desenvolvido com Next.js 15, oferecendo uma interface moderna e responsiva para cadastro, listagem, edição e exclusão de empresas.
 
+## Screenshots
+
+<div style="overflow-x: auto;">
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%;"><img src="./public/screenshots/home.png" alt="inicio" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/sidebar.png" alt="conta" style="width: 100%; height: auto; object-fit: cover;" /></td>
+        </tr>
+        <tr>
+            <td style="width: 50%;"><img src="./public/screenshots/register.png" alt="perfil" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/login.png" alt="checkout" style="width: 100%; height: auto; object-fit: cover;" /></td>
+        </tr>
+    </table>
+</div>
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Next.js 15** - Framework React com App Router
