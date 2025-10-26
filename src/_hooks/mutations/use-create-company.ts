@@ -10,6 +10,7 @@ export function useCreateCompany() {
   return useMutation({
     mutationFn: CompanyService.create,
     onSuccess: () => {
+      // Invalidate companies list to refresh the data
       queryClient.invalidateQueries({ queryKey: getCompaniesQueryKey() });
     },
   });
