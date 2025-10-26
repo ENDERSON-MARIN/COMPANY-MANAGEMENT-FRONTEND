@@ -7,12 +7,12 @@ Sistema de gerenciamento de empresas desenvolvido com Next.js 15, oferecendo uma
 <div style="overflow-x: auto;">
     <table style="width: 100%;">
         <tr>
-            <td style="width: 50%;"><img src="./public/screenshots/home.png" alt="inicio" style="width: 100%; height: auto; object-fit: cover;" /></td>
-            <td style="width: 50%;"><img src="./public/screenshots/sidebar.png" alt="conta" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/home.png" alt="home do site" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/sidebar.png" alt="sidebar menu" style="width: 100%; height: auto; object-fit: cover;" /></td>
         </tr>
         <tr>
-            <td style="width: 50%;"><img src="./public/screenshots/register.png" alt="perfil" style="width: 100%; height: auto; object-fit: cover;" /></td>
-            <td style="width: 50%;"><img src="./public/screenshots/login.png" alt="checkout" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/register.png" alt="register form" style="width: 100%; height: auto; object-fit: cover;" /></td>
+            <td style="width: 50%;"><img src="./public/screenshots/login.png" alt="login form" style="width: 100%; height: auto; object-fit: cover;" /></td>
         </tr>
     </table>
 </div>
